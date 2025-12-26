@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaikal HollowBlocks | Premium Construction Materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary: #FF6B35; /* Vibrant Orange */
+            --secondary: #004E89; /* Deep Blue */
+            --accent: #FFD166; /* Golden Yellow */
+            --dark: #1A1A2E; /* Dark Navy */
+            --light: #F8F9FA;
+            --success: #06D6A0; /* Mint Green */
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius: 20px;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeInBody 1s ease-out forwards;
+        }
+
+        @keyframes fadeInBody {
+            to { opacity: 1; }
+        }
+
+        /* Language Selector - FIXED */
+        .lang-selector {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1001;
+            display: flex;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 80px;
+            justify-content: center;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 78, 137, 0.2);
+        }
+
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 78, 137, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 78, 137, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 78, 137, 0); }
+        }
+
+        /* Header with Parallax Effect */
+        header {
+            background: linear-gradient(rgba(26, 26, 46, 0.95), rgba(26, 26, 46, 0.98)),
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23FF6B35" opacity="0.1"/></svg>');
+            background-size: cover;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, var(--primary), #FF8E53);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, white, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Message */
+        .hero-message {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.8s forwards;
+        }
+
+        .hero-message p {
+            color: white;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: slideUp 1s ease-out 1.1s forwards;
+        }
+
+        .btn {
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #FF8E53);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--secondary);
+            transform: translateY(-8px);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            animation: widthGrow 2s ease-out;
+        }
+
+        @keyframes widthGrow {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        /* Animated Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            perspective: 1000px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px) rotateX(10deg);
+            animation: cardAppear 0.8s ease-out forwards;
+        }
+
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .product-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .product-card:hover .card-image img {
+            transform: scale(1.2);
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
+        }
+
+        .card-content {
+            padding: 30px;
+            position: relative;
+            background: white;
+        }
+
+        .product-name {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-name i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .product-desc {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .feature i {
+            color: var(--success);
+        }
+
+        .price-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #eee;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .price::after {
+            content: 'per ton';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Human Touch Section */
+        .human-touch {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .human-touch::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: floatGrid 20s linear infinite;
+        }
+
+        @keyframes floatGrid {
+            from { transform: translateY(0) translateX(0); }
+            to { transform: translateY(-50px) translateX(-50px); }
+        }
+
+        .human-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .human-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .human-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent);
+        }
+
+        .human-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .human-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .human-card p {
+            text-align: center;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Delivery & Timing */
+        .info-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, var(--light), white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .info-card h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .timing-grid, .delivery-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .timing-item, .delivery-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: rgba(0, 78, 137, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .timing-item:hover, .delivery-item:hover {
+            background: rgba(0, 78, 137, 0.1);
+            transform: translateX(10px);
+        }
+
+        /* Animated WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+        }
+
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .whatsapp-btn-float {
+            background: #25D366;
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn-float:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 30px 60px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-btn-float::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            animation: pulseRing 2s infinite;
+        }
+
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #0F0F1E);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+            transform: translateX(0);
+            transition: var(--transition);
+        }
+
+        .footer-links li:hover {
+            transform: translateX(10px);
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .logo h1 { font-size: 3rem; }
+            .hero-message p { font-size: 1.2rem; }
+            .section-title h2 { font-size: 2.8rem; }
+            .lang-selector { top: 20px; right: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 { font-size: 2.5rem; }
+            .logo-icon { width: 90px; height: 90px; font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .human-grid, .info-cards { grid-template-columns: 1fr; }
+            .whatsapp-float { bottom: 20px; right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .product-name { font-size: 1.5rem; }
+            .price { font-size: 1.8rem; }
+            .lang-selector { padding: 8px 12px; gap: 8px; }
+            .lang-btn { padding: 8px 15px; min-width: 70px; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--accent));
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--secondary), var(--primary));
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector - FIXED VERSION -->
+    <div class="lang-selector">
+        <button class="lang-btn active" data-lang="en">
+            <i class="fas fa-globe"></i> ENG
+        </button>
+        <button class="lang-btn" data-lang="ta">
+            <i class="fas fa-language"></i> தமிழ்
+        </button>
+        <button class="lang-btn" data-lang="fr">
+            <i class="fas fa-flag"></i> FR
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h1>Karaikal HollowBlocks</h1>
+                    <div class="tagline">
+                        <span class="en">Building Dreams, One Block at a Time</span>
+                        <span class="ta" style="display:none">கனவுகளை கட்டியெழுப்புதல், ஒரு தொகுதி ஒரு நேரத்தில்</span>
+                        <span class="fr" style="display:none">Construire des Rêves, Un Bloc à la Fois</span>
+                    </div>
+                </div>
+
+                <div class="hero-message">
+                    <p class="en">
+                        🏗️ <strong>30+ Years of Trust!</strong> We don't just sell materials - we build relationships. 
+                        Every brick, every bag of sand carries our promise of quality. Your dream home deserves the best!
+                    </p>
+                    <p class="ta" style="display:none">
+                        🏗️ <strong>30+ வருட நம்பிக்கை!</strong> நாங்கள் பொருட்களை விற்க மட்டும் செய்யவில்லை - உறவுகளை கட்டுகிறோம். 
+                        ஒவ்வொரு செங்கல், ஒவ்வொரு மணல் பையும் எங்கள் தரத்தின் வாக்குறுதியை சுமக்கிறது. உங்கள் கனவு வீடு சிறந்ததை தான் தகுதி!
+                    </p>
+                    <p class="fr" style="display:none">
+                        🏗️ <strong>30+ Ans de Confiance!</strong> Nous ne vendons pas seulement des matériaux - nous construisons des relations. 
+                        Chaque brique, chaque sac de sable porte notre promesse de qualité. Votre maison de rêve mérite le meilleur!
+                    </p>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="tel:09965843455" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="en">📞 Call Now: 099658 43455</span>
+                        <span class="ta" style="display:none">📞 அழைக்கவும்: 099658 43455</span>
+                        <span class="fr" style="display:none">📞 Appelez: 099658 43455</span>
+                    </a>
+                    <a href="#products" class="btn btn-secondary">
+                        <i class="fas fa-boxes"></i>
+                        <span class="en">View Our Premium Materials</span>
+                        <span class="ta" style="display:none">எங்கள் பிரீமியம் பொருட்களை காண்க</span>
+                        <span class="fr" style="display:none">Voir Nos Matériaux Premium</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="en">🔥 Premium Construction Materials</h2>
+                <h2 class="ta" style="display:none">🔥 பிரீமியம் கட்டுமான பொருட்கள்</h2>
+                <h2 class="fr" style="display:none">🔥 Matériaux de Construction Premium</h2>
+                <p class="en" style="color: #666; font-size: 1.2rem; margin-top: 20px;">
+                    Factory-direct prices with ISO-certified quality. No middlemen, just pure value!
+                </p>
+                <p class="ta" style="color: #666; font-size: 1.2rem; margin-top: 20px; display:none;">
+                    தொழிற்சாலை நேரடி விலையில் ISO சான்றிதழ் தரம். இடைத்தரகர்கள் இல்லை, தூய மதிப்பு!
+                </p>
+                <p class="fr" style="color: #666; font-size: 1.2rem; margin-top: 20px; display:none;">
+                    Prix direct d'usine avec qualité certifiée ISO. Pas d'intermédiaires, juste de la valeur pure!
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <!-- M-Sand -->
+                <div class="product-card">
+                    <div class="card-badge en">Most Popular</div>
+                    <div class="card-badge ta" style="display:none">மிகவும் பிரபலமான</div>
+                    <div class="card-badge fr" style="display:none">Le Plus Populaire</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1601643157091-2d5d2dc71c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="M-Sand">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-water"></i>
+                            <span class="en">M-Sand (Manufactured)</span>
+                            <span class="ta" style="display:none">எம்-மணல் (தயாரிக்கப்பட்டது)</span>
+                            <span class="fr" style="display:none">Sable M (Manufacturé)</span>
+                        </h3>
+                        <p class="product-desc en">
+                            Say goodbye to river sand issues! Our M-Sand gives 30% stronger concrete. 
+                            <strong>Perfect for RCC work</strong> and plastering.
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            நதி மணல் பிரச்சனைகளுக்கு விடைபெறுங்கள்! எங்கள் எம்-மணல் 30% வலிமையான கான்கிரீட் தருகிறது. 
+                            <strong>ஆர்சிசி வேலைகளுக்கு சரியானது</strong> மற்றும் பூச்சு வேலைகளுக்கு.
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            Dites adieu aux problèmes de sable de rivière! Notre Sable M donne un béton 30% plus résistant. 
+                            <strong>Parfait pour les travaux RCC</strong> et le plâtrage.
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">0-4mm Grading</span>
+                                <span class="ta" style="display:none">0-4mm தரம்</span>
+                                <span class="fr" style="display:none">Calibrage 0-4mm</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Silt Free</span>
+                                <span class="ta" style="display:none">மண்ணாம்பு இல்லாத</span>
+                                <span class="fr" style="display:none">Sans Limon</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Higher Strength</span>
+                                <span class="ta" style="display:none">உயர் வலிமை</span>
+                                <span class="fr" style="display:none">Résistance Supérieure</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Eco Friendly</span>
+                                <span class="ta" style="display:none">சுற்றுச்சூழல் நட்பு</span>
+                                <span class="fr" style="display:none">Écologique</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹900</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20M-Sand" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S-Sand -->
+                <div class="product-card">
+                    <div class="card-badge en">Best for Plaster</div>
+                    <div class="card-badge ta" style="display:none">பூச்சுக்கு சிறந்தது</div>
+                    <div class="card-badge fr" style="display:none">Meilleur pour Plâtre</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1523364589582-df6e7e81e84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="S-Sand">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-wind"></i>
+                            <span class="en">S-Sand (Stone Dust)</span>
+                            <span class="ta" style="display:none">எஸ்-மணல் (கல் தூசி)</span>
+                            <span class="fr" style="display:none">Sable S (Poussière de Pierre)</span>
+                        </h3>
+                        <p class="product-desc en">
+                            Get that <strong>mirror-finish plastering!</strong> Our S-Sand ensures crack-free walls 
+                            with superior bonding.
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            <strong>கண்ணாடி முடிப்பு பூச்சு</strong> பெறுங்கள்! எங்கள் எஸ்-மணல் விரிசல் இல்லாத சுவர்களை 
+                            உயர்தர பிணைப்புடன் உறுதி செய்கிறது.
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            Obtenez ce <strong>plâtrage fini miroir!</strong> Notre Sable S assure des murs sans fissures 
+                            avec une adhérence supérieure.
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">0-2mm Fine</span>
+                                <span class="ta" style="display:none">0-2mm நுண்ணிய</span>
+                                <span class="fr" style="display:none">0-2mm Fin</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Smooth Finish</span>
+                                <span class="ta" style="display:none">மென்மையான முடிப்பு</span>
+                                <span class="fr" style="display:none">Finition Lisse</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Cost Effective</span>
+                                <span class="ta" style="display:none">செலவு குறைந்த</span>
+                                <span class="fr" style="display:none">Économique</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Uniform Quality</span>
+                                <span class="ta" style="display:none">சீரான தரம்</span>
+                                <span class="fr" style="display:none">Qualité Uniforme</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹750</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20S-Sand" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clay Bricks -->
+                <div class="product-card">
+                    <div class="card-badge en">Traditional Choice</div>
+                    <div class="card-badge ta" style="display:none">பாரம்பரிய தேர்வு</div>
+                    <div class="card-badge fr" style="display:none">Choix Traditionnel</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clay Bricks">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-home"></i>
+                            <span class="en">Clay Bricks</span>
+                            <span class="ta" style="display:none">மண் செங்கற்கள்</span>
+                            <span class="fr" style="display:none">Briques d'Argile</span>
+                        </h3>
+                        <p class="product-desc en">
+                            <strong>Time-tested quality!</strong> Our bricks have supported homes for generations. 
+                            Perfect load-bearing capacity.
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            <strong>காலம் சோதித்த தரம்!</strong> எங்கள் செங்கற்கள் தலைமுறைகளாக வீடுகளை ஆதரித்துள்ளன. 
+                            சரியான சுமை தாங்கும் திறன்.
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            <strong>Qualité éprouvée par le temps!</strong> Nos briques ont soutenu des maisons pendant des générations. 
+                            Capacité portante parfaite.
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">9×4.5×3 inches</span>
+                                <span class="ta" style="display:none">9×4.5×3 அங்குலம்</span>
+                                <span class="fr" style="display:none">9×4.5×3 pouces</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Load Bearing</span>
+                                <span class="ta" style="display:none">சுமை தாங்கும்</span>
+                                <span class="fr" style="display:none">Porteur</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Weather Resistant</span>
+                                <span class="ta" style="display:none">வானிலை எதிர்ப்பு</span>
+                                <span class="fr" style="display:none">Résistant aux Intempéries</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Uniform Shape</span>
+                                <span class="ta" style="display:none">சீரான வடிவம்</span>
+                                <span class="fr" style="display:none">Forme Uniforme</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹8</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Clay%20Bricks" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Stones -->
+                <div class="product-card">
+                    <div class="card-badge en">For Concrete Mix</div>
+                    <div class="card-badge ta" style="display:none">கான்கிரீட் கலவைக்கு</div>
+                    <div class="card-badge fr" style="display:none">Pour Mélange Béton</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Small Stones">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-gem"></i>
+                            <span class="en">Small Stones (20mm)</span>
+                            <span class="ta" style="display:none">சிறிய கற்கள் (20mm)</span>
+                            <span class="fr" style="display:none">Petites Pierres (20mm)</span>
+                        </h3>
+                        <p class="product-desc en">
+                            <strong>Clean & washed aggregates</strong> that give your concrete superior strength. 
+                            No impurities, just pure quality!
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            <strong>சுத்தமான & கழுவப்பட்ட சேர்மங்கள்</strong> உங்கள் கான்கிரீட்டிற்கு உயர்தர வலிமை தருகின்றன. 
+                            மாசுபாடுகள் இல்லை, தூய தரம் மட்டுமே!
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            <strong>Granulats propres et lavés</strong> qui donnent à votre béton une résistance supérieure. 
+                            Pas d'impuretés, juste de la qualité pure!
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">20mm Size</span>
+                                <span class="ta" style="display:none">20mm அளவு</span>
+                                <span class="fr" style="display:none">Taille 20mm</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Clean & Washed</span>
+                                <span class="ta" style="display:none">சுத்தமான & கழுவப்பட்ட</span>
+                                <span class="fr" style="display:none">Propre et Lavé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">High Density</span>
+                                <span class="ta" style="display:none">உயர் அடர்த்தி</span>
+                                <span class="fr" style="display:none">Haute Densité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Round Shape</span>
+                                <span class="ta" style="display:none">வட்ட வடிவம்</span>
+                                <span class="fr" style="display:none">Forme Ronde</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹700</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Small%20Stones%20(20mm)" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Stones -->
+                <div class="product-card">
+                    <div class="card-badge en">Foundation Grade</div>
+                    <div class="card-badge ta" style="display:none">அடித்தள தரம்</div>
+                    <div class="card-badge fr" style="display:none">Grade Fondation</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1556817605-e4c6f70c0c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Big Stones">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-mountain"></i>
+                            <span class="en">Big Stones (40mm)</span>
+                            <span class="ta" style="display:none">பெரிய கற்கள் (40mm)</span>
+                            <span class="fr" style="display:none">Grosses Pierres (40mm)</span>
+                        </h3>
+                        <p class="product-desc en">
+                            <strong>Built to last centuries!</strong> Our 40mm stones provide unmatched stability 
+                            for heavy construction and foundations.
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            <strong>நூற்றாண்டுகள் நீடிக்க கட்டப்பட்டது!</strong> எங்கள் 40mm கற்கள் கனரக கட்டுமானத்திற்கும் 
+                            அடித்தளங்களுக்கும் தனித்த நிலைப்புத்தன்மையை வழங்குகின்றன.
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            <strong>Construit pour durer des siècles!</strong> Nos pierres de 40mm offrent une stabilité incomparable 
+                            pour la construction lourde et les fondations.
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">40mm Size</span>
+                                <span class="ta" style="display:none">40mm அளவு</span>
+                                <span class="fr" style="display:none">Taille 40mm</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">High Strength</span>
+                                <span class="ta" style="display:none">உயர் வலிமை</span>
+                                <span class="fr" style="display:none">Haute Résistance</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Foundation Grade</span>
+                                <span class="ta" style="display:none">அடித்தள தரம்</span>
+                                <span class="fr" style="display:none">Grade Fondation</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Durable</span>
+                                <span class="ta" style="display:none">நீடித்து நிலைக்கும்</span>
+                                <span class="fr" style="display:none">Durable</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹650</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Big%20Stones%20(40mm)" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hollow Blocks -->
+                <div class="product-card">
+                    <div class="card-badge en">Modern Solution</div>
+                    <div class="card-badge ta" style="display:none">நவீன தீர்வு</div>
+                    <div class="card-badge fr" style="display:none">Solution Moderne</div>
+                    
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1590691565924-90d0a14443a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hollow Blocks">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-name">
+                            <i class="fas fa-cube"></i>
+                            <span class="en">Hollow Blocks</span>
+                            <span class="ta" style="display:none">வெற்று தொகுதிகள்</span>
+                            <span class="fr" style="display:none">Blocs Creux</span>
+                        </h3>
+                        <p class="product-desc en">
+                            <strong>Lightweight yet strong!</strong> Save 25% on construction cost with better 
+                            thermal and sound insulation.
+                        </p>
+                        <p class="product-desc ta" style="display:none">
+                            <strong>இலகுவான ஆனால் வலிமையான!</strong> சிறந்த வெப்ப மற்றும் ஒலி காப்புடன் 
+                            கட்டுமான செலவில் 25% சேமிக்கவும்.
+                        </p>
+                        <p class="product-desc fr" style="display:none">
+                            <strong>Léger mais solide!</strong> Économisez 25% sur le coût de construction avec une meilleure 
+                            isolation thermique et acoustique.
+                        </p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">4", 6", 8" Sizes</span>
+                                <span class="ta" style="display:none">4", 6", 8" அளவுகள்</span>
+                                <span class="fr" style="display:none">Tailles 4", 6", 8"</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Thermal Insulation</span>
+                                <span class="ta" style="display:none">வெப்ப காப்பு</span>
+                                <span class="fr" style="display:none">Isolation Thermique</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Sound Proof</span>
+                                <span class="ta" style="display:none">ஒலி காப்பு</span>
+                                <span class="fr" style="display:none">Insonorisation</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Fire Resistant</span>
+                                <span class="ta" style="display:none">தீ எதிர்ப்பு</span>
+                                <span class="fr" style="display:none">Ignifuge</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-action">
+                            <div class="price">₹35</div>
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Hollow%20Blocks" 
+                               class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="en">Order Now</span>
+                                <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
+                                <span class="fr" style="display:none">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human Touch Section -->
+    <section class="human-touch">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;" class="en">🤝 Why Choose Us?</h2>
+                <h2 style="color: white; display:none;" class="ta">🤝 எங்களை ஏன் தேர்வு செய்ய வேண்டும்?</h2>
+                <h2 style="color: white; display:none;" class="fr">🤝 Pourquoi Nous Choisir?</h2>
+            </div>
+            
+            <div class="human-grid">
+                <div class="human-card">
+                    <div class="human-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="en">30+ Years Trust</h3>
+                    <h3 class="ta" style="display:none">30+ வருட நம்பிக்கை</h3>
+                    <h3 class="fr" style="display:none">30+ Ans de Confiance</h3>
+                    <p class="en">Three generations of trust! We've built relationships, not just buildings.</p>
+                    <p class="ta" style="display:none">மூன்று தலைமுறைகளின் நம்பிக்கை! நாங்கள் கட்டிடங்களை மட்டும் அல்ல, உறவுகளை கட்டியுள்ளோம்.</p>
+                    <p class="fr" style="display:none">Trois générations de confiance! Nous avons construit des relations, pas seulement des bâtiments.</p>
+                </div>
+                
+                <div class="human-card">
+                    <div class="human-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="en">On-Time Delivery</h3>
+                    <h3 class="ta" style="display:none">சரியான நேர விநியோகம்</h3>
+                    <h3 class="fr" style="display:none">Livraison à Temps</h3>
+                    <p class="en">Your time is precious. We deliver within 4 hours in Karaikal area!</p>
+                    <p class="ta" style="display:none">உங்கள் நேரம் விலைமதிப்பற்றது. கரைக்கால் பகுதியில் 4 மணி நேரத்திற்குள் விநியோகிக்கிறோம்!</p>
+                    <p class="fr" style="display:none">Votre temps est précieux. Nous livrons dans les 4 heures dans la région de Karaikal!</p>
+                </div>
+                
+                <div class="human-card">
+                    <div class="human-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="en">Quality Guaranteed</h3>
+                    <h3 class="ta" style="display:none">தரம் உத்தரவாதம்</h3>
+                    <h3 class="fr" style="display:none">Qualité Garantie</h3>
+                    <p class="en">Every brick is tested. Every sand bag is checked. Your satisfaction, our priority!</p>
+                    <p class="ta" style="display:none">ஒவ்வொரு செங்கலும் சோதிக்கப்படுகிறது. ஒவ்வொரு மணல் பையும் சோதிக்கப்படுகிறது. உங்கள் திருப்தி, எங்கள் முன்னுரிமை!</p>
+                    <p class="fr" style="display:none">Chaque brique est testée. Chaque sac de sable est vérifié. Votre satisfaction, notre priorité!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery & Timing -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3><i class="fas fa-truck"></i> 
+                        <span class="en">Delivery Areas & Charges</span>
+                        <span class="ta" style="display:none">விநியோக பகுதிகள் & கட்டணங்கள்</span>
+                        <span class="fr" style="display:none">Zones & Frais de Livraison</span>
+                    </h3>
+                    <div class="delivery-grid">
+                        <div class="delivery-item">
+                            <span class="en">Karaikal City</span>
+                            <span class="ta" style="display:none">கரைக்கால் நகரம்</span>
+                            <span class="fr" style="display:none">Ville de Karaikal</span>
+                            <span style="color: var(--success); font-weight: bold;" class="en">FREE</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">இலவசம்</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">GRATUIT</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span class="en">Nallambal & Surrounding</span>
+                            <span class="ta" style="display:none">நல்லம்பல் & சுற்றுவட்டாரம்</span>
+                            <span class="fr" style="display:none">Nallambal & Environs</span>
+                            <span style="color: var(--success); font-weight: bold;" class="en">FREE</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">இலவசம்</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">GRATUIT</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span class="en">Kumbakonam (32 mins)</span>
+                            <span class="ta" style="display:none">கும்பகோணம் (32 நிமி)</span>
+                            <span class="fr" style="display:none">Kumbakonam (32 min)</span>
+                            <span style="color: var(--primary); font-weight: bold;">₹500</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span class="en">Puducherry City</span>
+                            <span class="ta" style="display:none">புதுச்சேரி நகரம்</span>
+                            <span class="fr" style="display:none">Ville de Puducherry</span>
+                            <span style="color: var(--primary); font-weight: bold;">₹800</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span class="en">Nagore & Thirunallar</span>
+                            <span class="ta" style="display:none">நாகூர் & திருநல்லூர்</span>
+                            <span class="fr" style="display:none">Nagore & Thirunallar</span>
+                            <span style="color: var(--primary); font-weight: bold;">₹600</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: var(--primary); font-weight: bold;">
+                        <i class="fas fa-gift"></i> 
+                        <span class="en">Bulk orders (10+ tons) get FREE delivery anywhere!</span>
+                        <span class="ta" style="display:none">மொத்த ஆர்டர்கள் (10+ டன்) எங்கும் இலவச விநியோகம்!</span>
+                        <span class="fr" style="display:none">Commandes en gros (10+ tonnes) = LIVRAISON GRATUITE partout!</span>
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3><i class="fas fa-clock"></i> 
+                        <span class="en">Office Timing & Location</span>
+                        <span class="ta" style="display:none">அலுவலக நேரம் & இடம்</span>
+                        <span class="fr" style="display:none">Heures & Emplacement</span>
+                    </h3>
+                    <div class="timing-grid">
+                        <div class="timing-item">
+                            <span class="en">Monday - Sunday</span>
+                            <span class="ta" style="display:none">திங்கள் - ஞாயிறு</span>
+                            <span class="fr" style="display:none">Lundi - Dimanche</span>
+                            <span style="color: var(--secondary); font-weight: bold;">6:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="timing-item">
+                            <span class="en">Delivery Hours</span>
+                            <span class="ta" style="display:none">விநியோக நேரங்கள்</span>
+                            <span class="fr" style="display:none">Heures de Livraison</span>
+                            <span style="color: var(--secondary); font-weight: bold;">7 AM - 7 PM</span>
+                        </div>
+                        <div class="timing-item">
+                            <span class="en">Holidays</span>
+                            <span class="ta" style="display:none">விடுமுறை நாட்கள்</span>
+                            <span class="fr" style="display:none">Jours Fériés</span>
+                            <span style="color: var(--success); font-weight: bold;" class="en">OPEN All Days</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">அனைத்து நாட்களும் திறந்த</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">OUVERT Tous les Jours</span>
+                        </div>
+                        <div class="timing-item">
+                            <span class="en">From Kumbakonam</span>
+                            <span class="ta" style="display:none">கும்பகோணத்தில் இருந்து</span>
+                            <span class="fr" style="display:none">De Kumbakonam</span>
+                            <span style="color: var(--primary); font-weight: bold;">32 minutes</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 78, 137, 0.05); border-radius: 10px;">
+                        <h4 style="color: var(--secondary); margin-bottom: 10px;">
+                            <i class="fas fa-map-marker-alt"></i> 
+                            <span class="en">Our Location</span>
+                            <span class="ta" style="display:none">எங்கள் இடம்</span>
+                            <span class="fr" style="display:none">Notre Emplacement</span>
+                        </h4>
+                        <p style="color: #555;">
+                            <strong>WPWQ+R88, Kumbakonam - Karaikal Rd,<br>
+                            Nallambal, Puducherry 609601</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919965843455?text=Hello%20Karaikal%20HollowBlocks!%20I%20need%20help%20with%20construction%20materials" 
+           class="whatsapp-btn-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="en">Karaikal HollowBlocks</h3>
+                    <h3 class="ta" style="display:none">கரைக்கால் ஹோலோப்ளாக்ஸ்</h3>
+                    <h3 class="fr" style="display:none">Karaikal HollowBlocks</h3>
+                    <p class="en" style="color: #ccc; line-height: 1.8;">
+                        <strong>Building trust since 1990.</strong> We're not just suppliers, we're your construction partners. 
+                        Your dream, our responsibility!
+                    </p>
+                    <p class="ta" style="color: #ccc; line-height: 1.8; display:none;">
+                        <strong>1990 முதல் நம்பிக்கையை கட்டியெழுப்புகிறோம்.</strong> நாங்கள் சப்ளையர்கள் மட்டுமல்ல, 
+                        உங்கள் கட்டுமான கூட்டாளிகள். உங்கள் கனவு, எங்கள் பொறுப்பு!
+                    </p>
+                    <p class="fr" style="color: #ccc; line-height: 1.8; display:none;">
+                        <strong>Bâtir la confiance depuis 1990.</strong> Nous ne sommes pas seulement des fournisseurs, nous sommes vos partenaires de construction. 
+                        Votre rêve, notre responsabilité!
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="en">Contact Us</h3>
+                    <h3 class="ta" style="display:none">எங்களை தொடர்பு கொள்ளுங்கள்</h3>
+                    <h3 class="fr" style="display:none">Contactez-nous</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:09965843455"><i class="fas fa-phone"></i> 099658 43455</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> WPWQ+R88, Kumbakonam Rd</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> 6:00 AM - 9:00 PM</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> <span class="en">WhatsApp Chat</span><span class="ta" style="display:none">WhatsApp அரட்டை</span><span class="fr" style="display:none">Chat WhatsApp</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="en">Quick Links</h3>
+                    <h3 class="ta" style="display:none">விரைவு இணைப்புகள்</h3>
+                    <h3 class="fr" style="display:none">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Home</span><span class="ta" style="display:none">முகப்பு</span><span class="fr" style="display:none">Accueil</span></a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> <span class="en">Products</span><span class="ta" style="display:none">பொருட்கள்</span><span class="fr" style="display:none">Produits</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Delivery Info</span><span class="ta" style="display:none">விநியோக தகவல்</span><span class="fr" style="display:none">Info Livraison</span></a></li>
+                        <li><a href="tel:09965843455"><i class="fas fa-chevron-right"></i> <span class="en">Call Now</span><span class="ta" style="display:none">அழைக்கவும்</span><span class="fr" style="display:none">Appeler</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Karaikal HollowBlocks. 
+                    <span class="en">All Rights Reserved. | Building Dreams Since 1990</span>
+                    <span class="ta" style="display:none">அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. | 1990 முதல் கனவுகளை கட்டியெழுப்புதல்</span>
+                    <span class="fr" style="display:none">Tous droits réservés. | Construire des Rêves Depuis 1990</span>
+                </p>
+                <p style="margin-top: 10px;">
+                    <i class="fas fa-map-pin"></i> WPWQ+R88, Kumbakonam - Karaikal Rd, Nallambal, Puducherry 609601 | 
+                    <i class="fas fa-phone"></i> 099658 43455
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // FIXED Language Switching - Simple and Reliable
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    
+                    // Remove active class from all buttons
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show/hide English content
+                    document.querySelectorAll('.en').forEach(el => {
+                        if (lang === 'en') {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide Tamil content
+                    document.querySelectorAll('.ta').forEach(el => {
+                        if (lang === 'ta') {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide French content
+                    document.querySelectorAll('.fr').forEach(el => {
+                        if (lang === 'fr') {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update WhatsApp message based on language
+                    let whatsappMsg = "";
+                    if (lang === 'en') {
+                        whatsappMsg = "Hello Karaikal HollowBlocks! I need help with construction materials";
+                    } else if (lang === 'ta') {
+                        whatsappMsg = "வணக்கம் கரைக்கால் ஹோலோப்ளாக்ஸ்! கட்டுமான பொருட்கள் பற்றி உதவி தேவை";
+                    } else if (lang === 'fr') {
+                        whatsappMsg = "Bonjour Karaikal HollowBlocks! J'ai besoin d'aide avec les matériaux de construction";
+                    }
+                    
+                    // Update all WhatsApp links
+                    document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+                        const baseUrl = link.href.split('?')[0];
+                        link.href = `${baseUrl}?text=${encodeURIComponent(whatsappMsg)}`;
+                    });
+                });
+            });
+            
+            // Initialize Swiper
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+            
+            // Animate on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Parallax effect on header
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const header = document.querySelector('header');
+                if (header) {
+                    header.style.backgroundPositionY = scrolled * 0.5 + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
