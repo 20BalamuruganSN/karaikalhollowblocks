@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,12 @@
     <style>
         /* CSS Variables for Theme */
         :root {
-            --primary: #FF6B35;
-            /* Vibrant Orange */
-            --secondary: #004E89;
-            /* Deep Blue */
-            --accent: #FFD166;
-            /* Golden Yellow */
-            --dark: #1A1A2E;
-            /* Dark Navy */
+            --primary: #FF6B35; /* Vibrant Orange */
+            --secondary: #004E89; /* Deep Blue */
+            --accent: #FFD166; /* Golden Yellow */
+            --dark: #1A1A2E; /* Dark Navy */
             --light: #F8F9FA;
-            --success: #06D6A0;
-            /* Mint Green */
+            --success: #06D6A0; /* Mint Green */
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             --radius: 20px;
             --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -42,9 +36,7 @@
         }
 
         @keyframes fadeInBody {
-            to {
-                opacity: 1;
-            }
+            to { opacity: 1; }
         }
 
         /* Language Selector - FIXED */
@@ -93,23 +85,15 @@
         }
 
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 78, 137, 0.4);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(0, 78, 137, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 78, 137, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(0, 78, 137, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 78, 137, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 78, 137, 0); }
         }
 
         /* Header with Parallax Effect */
         header {
             background: linear-gradient(rgba(26, 26, 46, 0.95), rgba(26, 26, 46, 0.98)),
-                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -134,13 +118,8 @@
         }
 
         @keyframes wave {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-100px);
-            }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
         }
 
         .container {
@@ -169,15 +148,8 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .logo-icon {
@@ -196,13 +168,8 @@
         }
 
         @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .logo h1 {
@@ -218,13 +185,8 @@
         }
 
         @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-
-            100% {
-                background-position: 200% center;
-            }
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
 
         .tagline {
@@ -241,7 +203,6 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -331,374 +292,6 @@
             transform: translateY(-8px);
         }
 
-        /* NEW: Image Carousel Section */
-        /* FIXED: Carousel Image Styling */
-        .gallery-carousel {
-            width: 100%;
-            height: 600px;
-            /* Increased height */
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .gallery-carousel .swiper-slide {
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .slide-image-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* KEY FIX - makes images fill container */
-            object-position: center;
-            display: block;
-            transition: transform 1s ease;
-        }
-
-        .gallery-carousel .swiper-slide-active img {
-            transform: scale(1.05);
-        }
-
-        .carousel-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            color: white;
-            padding: 40px 30px 30px;
-            z-index: 2;
-        }
-
-        .carousel-overlay h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .carousel-overlay p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-
-        /* Image Loading Fallback */
-        .gallery-carousel img {
-            background: linear-gradient(135deg, var(--secondary), var(--dark));
-            min-height: 400px;
-        }
-
-        /* Swiper Navigation Styling */
-        .swiper-button-next,
-        .swiper-button-prev {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background: white;
-            opacity: 0.5;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--primary);
-            opacity: 1;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .gallery-carousel {
-                height: 500px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .gallery-carousel {
-                height: 400px;
-            }
-
-            .carousel-overlay {
-                padding: 25px 20px 20px;
-            }
-
-            .carousel-overlay h3 {
-                font-size: 1.4rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-carousel {
-                height: 300px;
-            }
-
-            .carousel-overlay {
-                padding: 20px 15px 15px;
-            }
-
-            .carousel-overlay h3 {
-                font-size: 1.2rem;
-            }
-
-            .carousel-overlay p {
-                font-size: 0.9rem;
-            }
-
-            .swiper-button-next,
-            .swiper-button-prev {
-                width: 40px;
-                height: 40px;
-            }
-
-            .swiper-button-next:after,
-            .swiper-button-prev:after {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* NEW: Business Calculator */
-        .calculator-section {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .calculator-container {
-            background: linear-gradient(135deg, var(--light), white);
-            border-radius: var(--radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .calculator-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .calculator-header h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .calculator-input {
-            margin-bottom: 25px;
-        }
-
-        .calculator-input label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--secondary);
-            font-size: 1.1rem;
-        }
-
-        .calculator-input select,
-        .calculator-input input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            background: white;
-        }
-
-        .calculator-input select:focus,
-        .calculator-input input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-            outline: none;
-        }
-
-        .unit-display {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .unit-display span {
-            background: var(--accent);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: bold;
-            color: var(--dark);
-        }
-
-        .calculator-results {
-            background: linear-gradient(135deg, var(--secondary), var(--dark));
-            color: white;
-            padding: 30px;
-            border-radius: var(--radius);
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .total-cost {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--accent);
-            margin: 20px 0;
-        }
-
-        .calculator-note {
-            background: rgba(6, 214, 160, 0.1);
-            border-left: 4px solid var(--success);
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 0 10px 10px 0;
-            font-size: 0.9rem;
-        }
-
-        /* NEW: Customer Feedback Section */
-        .feedback-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--dark), #0F0F1E);
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .feedback-track {
-            display: flex;
-            animation: scrollFeedback 40s linear infinite;
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        @keyframes scrollFeedback {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .feedback-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius);
-            padding: 30px;
-            min-width: 400px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .feedback-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--accent);
-        }
-
-        .feedback-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .customer-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .customer-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .customer-info p {
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-
-        .stars {
-            color: var(--accent);
-            margin: 10px 0;
-        }
-
-        .feedback-text {
-            font-style: italic;
-            line-height: 1.6;
-            color: #eee;
-        }
-
-        .feedback-date {
-            margin-top: 15px;
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: right;
-        }
-
         /* Products Section */
         .products-section {
             padding: 120px 0;
@@ -732,13 +325,8 @@
         }
 
         @keyframes widthGrow {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100px;
-            }
+            from { width: 0; }
+            to { width: 100px; }
         }
 
         /* Animated Product Cards */
@@ -769,29 +357,12 @@
             }
         }
 
-        .product-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .product-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .product-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .product-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .product-card:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .product-card:nth-child(6) {
-            animation-delay: 0.6s;
-        }
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
 
         .product-card:hover {
             transform: translateY(-20px) rotateX(5deg);
@@ -813,15 +384,8 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .card-image {
@@ -848,7 +412,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
         }
 
         .card-content {
@@ -957,19 +521,14 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: floatGrid 20s linear infinite;
         }
 
         @keyframes floatGrid {
-            from {
-                transform: translateY(0) translateX(0);
-            }
-
-            to {
-                transform: translateY(-50px) translateX(-50px);
-            }
+            from { transform: translateY(0) translateX(0); }
+            to { transform: translateY(-50px) translateX(-50px); }
         }
 
         .human-grid {
@@ -1069,14 +628,12 @@
             gap: 15px;
         }
 
-        .timing-grid,
-        .delivery-grid {
+        .timing-grid, .delivery-grid {
             display: grid;
             gap: 15px;
         }
 
-        .timing-item,
-        .delivery-item {
+        .timing-item, .delivery-item {
             display: flex;
             justify-content: space-between;
             padding: 15px;
@@ -1085,8 +642,7 @@
             transition: var(--transition);
         }
 
-        .timing-item:hover,
-        .delivery-item:hover {
+        .timing-item:hover, .delivery-item:hover {
             background: rgba(0, 78, 137, 0.1);
             transform: translateX(10px);
         }
@@ -1101,15 +657,8 @@
         }
 
         @keyframes floatWhatsApp {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .whatsapp-btn-float {
@@ -1144,15 +693,8 @@
         }
 
         @keyframes pulseRing {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
         }
 
         /* Footer */
@@ -1225,115 +767,29 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .logo h1 {
-                font-size: 3rem;
-            }
-
-            .hero-message p {
-                font-size: 1.2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.8rem;
-            }
-
-            .lang-selector {
-                top: 20px;
-                right: 20px;
-            }
-
-            .gallery-carousel {
-                height: 400px;
-            }
-
-            .feedback-card {
-                min-width: 350px;
-            }
+            .logo h1 { font-size: 3rem; }
+            .hero-message p { font-size: 1.2rem; }
+            .section-title h2 { font-size: 2.8rem; }
+            .lang-selector { top: 20px; right: 20px; }
         }
 
         @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 2.5rem;
-            }
-
-            .logo-icon {
-                width: 90px;
-                height: 90px;
-                font-size: 2.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .human-grid,
-            .info-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .gallery-carousel {
-                height: 300px;
-            }
-
-            .feedback-card {
-                min-width: 300px;
-            }
-
-            .calculator-header h2 {
-                font-size: 2rem;
-            }
+            .logo h1 { font-size: 2.5rem; }
+            .logo-icon { width: 90px; height: 90px; font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .human-grid, .info-cards { grid-template-columns: 1fr; }
+            .whatsapp-float { bottom: 20px; right: 20px; }
         }
 
         @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .product-name {
-                font-size: 1.5rem;
-            }
-
-            .price {
-                font-size: 1.8rem;
-            }
-
-            .lang-selector {
-                padding: 8px 12px;
-                gap: 8px;
-            }
-
-            .lang-btn {
-                padding: 8px 15px;
-                min-width: 70px;
-            }
-
-            .gallery-carousel {
-                height: 250px;
-            }
-
-            .feedback-card {
-                min-width: 280px;
-                padding: 20px;
-            }
+            .logo h1 { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .product-name { font-size: 1.5rem; }
+            .price { font-size: 1.8rem; }
+            .lang-selector { padding: 8px 12px; gap: 8px; }
+            .lang-btn { padding: 8px 15px; min-width: 70px; }
         }
 
         /* Custom Scrollbar */
@@ -1355,9 +811,8 @@
         }
     </style>
 </head>
-
 <body>
-    <!-- Language Selector -->
+    <!-- Language Selector - FIXED VERSION -->
     <div class="lang-selector">
         <button class="lang-btn active" data-lang="en">
             <i class="fas fa-globe"></i> ENG
@@ -1388,21 +843,16 @@
 
                 <div class="hero-message">
                     <p class="en">
-                        🏗️ <strong>30+ Years of Trust!</strong> We don't just sell materials - we build relationships.
-                        Every brick, every bag of sand carries our promise of quality. Your dream home deserves the
-                        best!
+                        🏗️ <strong>30+ Years of Trust!</strong> We don't just sell materials - we build relationships. 
+                        Every brick, every bag of sand carries our promise of quality. Your dream home deserves the best!
                     </p>
                     <p class="ta" style="display:none">
-                        🏗️ <strong>30+ வருட நம்பிக்கை!</strong> நாங்கள் பொருட்களை விற்க மட்டும் செய்யவில்லை - உறவுகளை
-                        கட்டுகிறோம்.
-                        ஒவ்வொரு செங்கல், ஒவ்வொரு மணல் பையும் எங்கள் தரத்தின் வாக்குறுதியை சுமக்கிறது. உங்கள் கனவு வீடு
-                        சிறந்ததை தான் தகுதி!
+                        🏗️ <strong>30+ வருட நம்பிக்கை!</strong> நாங்கள் பொருட்களை விற்க மட்டும் செய்யவில்லை - உறவுகளை கட்டுகிறோம். 
+                        ஒவ்வொரு செங்கல், ஒவ்வொரு மணல் பையும் எங்கள் தரத்தின் வாக்குறுதியை சுமக்கிறது. உங்கள் கனவு வீடு சிறந்ததை தான் தகுதி!
                     </p>
                     <p class="fr" style="display:none">
-                        🏗️ <strong>30+ Ans de Confiance!</strong> Nous ne vendons pas seulement des matériaux - nous
-                        construisons des relations.
-                        Chaque brique, chaque sac de sable porte notre promesse de qualité. Votre maison de rêve mérite
-                        le meilleur!
+                        🏗️ <strong>30+ Ans de Confiance!</strong> Nous ne vendons pas seulement des matériaux - nous construisons des relations. 
+                        Chaque brique, chaque sac de sable porte notre promesse de qualité. Votre maison de rêve mérite le meilleur!
                     </p>
                 </div>
 
@@ -1413,421 +863,16 @@
                         <span class="ta" style="display:none">📞 அழைக்கவும்: 099658 43455</span>
                         <span class="fr" style="display:none">📞 Appelez: 099658 43455</span>
                     </a>
-                    <a href="#calculator" class="btn btn-secondary">
-                        <i class="fas fa-calculator"></i>
-                        <span class="en">Calculate Your Order Cost</span>
-                        <span class="ta" style="display:none">உங்கள் ஆர்டர் செலவை கணக்கிடுங்கள்</span>
-                        <span class="fr" style="display:none">Calculez le Coût de Votre Commande</span>
+                    <a href="#products" class="btn btn-secondary">
+                        <i class="fas fa-boxes"></i>
+                        <span class="en">View Our Premium Materials</span>
+                        <span class="ta" style="display:none">எங்கள் பிரீமியம் பொருட்களை காண்க</span>
+                        <span class="fr" style="display:none">Voir Nos Matériaux Premium</span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- NEW: Image Carousel -->
-    <section class="carousel-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="en">🏭 Our Factory & Products Gallery</h2>
-                <h2 class="ta" style="display:none">🏭 எங்கள் தொழிற்சாலை & பொருட்கள் கேலரி</h2>
-                <h2 class="fr" style="display:none">🏭 Notre Usine & Galerie de Produits</h2>
-            </div>
-
-            <div class="gallery-carousel swiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/RCM.jpeg" alt="Hollow Blocks Production"
-                                onerror="this.src='https://images.unsplash.com/photo-1590691565924-90d0a14443a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">Modern Hollow Blocks Manufacturing</h3>
-                            <h3 class="ta" style="display:none">நவீன வெற்று தொகுதிகள் உற்பத்தி</h3>
-                            <h3 class="fr" style="display:none">Fabrication Moderne de Blocs Creux</h3>
-                            <p class="en">State-of-the-art machinery for consistent quality</p>
-                            <p class="ta" style="display:none">சீரான தரத்திற்கான நவீன இயந்திரங்கள்</p>
-                            <p class="fr" style="display:none">Machinerie de pointe pour une qualité constante</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/ACC_blocks.jpeg" alt="M-Sand Processing"
-                                onerror="this.src='https://images.unsplash.com/photo-1601643157091-2d5d2dc71c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">ACC Quality Blocks</h3>
-                            <h3 class="ta" style="display:none">ஏ.சி.சி தர தொகுதிகள்</h3>
-                            <h3 class="fr" style="display:none">Blocs de Qualité ACC</h3>
-                            <p class="en">Premium quality construction blocks</p>
-                            <p class="ta" style="display:none">பிரீமியம் தர கட்டுமான தொகுதிகள்</p>
-                            <p class="fr" style="display:none">Blocs de construction de qualité premium</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/white_bricks.jpeg" alt="White Bricks"
-                                onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">White Clay Bricks</h3>
-                            <h3 class="ta" style="display:none">வெள்ளை மண் செங்கற்கள்</h3>
-                            <h3 class="fr" style="display:none">Briques d'Argile Blanches</h3>
-                            <p class="en">Premium white bricks for modern construction</p>
-                            <p class="ta" style="display:none">நவீன கட்டுமானத்திற்கான பிரீமியம் வெள்ளை செங்கற்கள்</p>
-                            <p class="fr" style="display:none">Briques blanches premium pour construction moderne</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/red_bricks.jpeg" alt="Red Bricks"
-                                onerror="this.src='https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">Traditional Red Bricks</h3>
-                            <h3 class="ta" style="display:none">பாரம்பரிய சிவப்பு செங்கற்கள்</h3>
-                            <h3 class="fr" style="display:none">Briques Rouges Traditionnelles</h3>
-                            <p class="en">Classic red bricks with superior strength</p>
-                            <p class="ta" style="display:none">சிறந்த வலிமையுடன் கூடிய கிளாசிக் சிவப்பு செங்கற்கள்</p>
-                            <p class="fr" style="display:none">Briques rouges classiques avec une résistance supérieure
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/karaikal_hollowblocks.jpeg" alt="Karaikal HollowBlocks"
-                                onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">Karaikal HollowBlocks Factory</h3>
-                            <h3 class="ta" style="display:none">கரைக்கால் ஹோலோப்ளாக்ஸ் தொழிற்சாலை</h3>
-                            <h3 class="fr" style="display:none">Usine Karaikal HollowBlocks</h3>
-                            <p class="en">Our manufacturing facility in Nallambal</p>
-                            <p class="ta" style="display:none">நல்லம்பலில் உள்ள எங்கள் உற்பத்தி வசதி</p>
-                            <p class="fr" style="display:none">Notre installation de fabrication à Nallambal</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/kada_image.jpeg" alt="Construction Materials"
-                                onerror="this.src='https://images.unsplash.com/photo-1556817605-e4c6f70c0c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">Construction Materials Stock</h3>
-                            <h3 class="ta" style="display:none">கட்டுமான பொருட்கள் சரக்கு</h3>
-                            <h3 class="fr" style="display:none">Stock de Matériaux de Construction</h3>
-                            <p class="en">Well-organized inventory for quick delivery</p>
-                            <p class="ta" style="display:none">விரைவு விநியோகத்திற்கு சரியாக ஒழுங்கமைக்கப்பட்ட சரக்கு
-                            </p>
-                            <p class="fr" style="display:none">Inventaire bien organisé pour livraison rapide</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 -->
-                    <div class="swiper-slide">
-                        <div class="slide-image-container">
-                            <img src="./assets/images/kada_vasal.jpeg" alt="Factory Entrance"
-                                onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        </div>
-                        <div class="carousel-overlay">
-                            <h3 class="en">Factory Entrance</h3>
-                            <h3 class="ta" style="display:none">தொழிற்சாலை நுழைவு</h3>
-                            <h3 class="fr" style="display:none">Entrée de l'Usine</h3>
-                            <p class="en">Visit our factory in Nallambal, Puducherry</p>
-                            <p class="ta" style="display:none">நல்லம்பல், புதுச்சேரியில் எங்கள் தொழிற்சாலைக்கு வருகை
-                                தரவும்</p>
-                            <p class="fr" style="display:none">Visitez notre usine à Nallambal, Puducherry</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Business Calculator -->
-    <section class="calculator-section" id="calculator">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="en">💰 Smart Business Calculator</h2>
-                <h2 class="ta" style="display:none">💰 ஸ்மார்ட் வணிக கால்குலேட்டர்</h2>
-                <h2 class="fr" style="display:none">💰 Calculateur d'Affaires Intelligent</h2>
-                <p class="en" style="color: #666; font-size: 1.2rem; margin-top: 20px;">
-                    Calculate your exact cost before ordering! No hidden charges, transparent pricing.
-                </p>
-                <p class="ta" style="color: #666; font-size: 1.2rem; margin-top: 20px; display:none;">
-                    ஆர்டர் செய்வதற்கு முன் உங்கள் சரியான செலவை கணக்கிடுங்கள்! மறைந்த கட்டணங்கள் இல்லை, வெளிப்படையான
-                    விலை.
-                </p>
-                <p class="fr" style="color: #666; font-size: 1.2rem; margin-top: 20px; display:none;">
-                    Calculez votre coût exact avant de commander! Pas de frais cachés, tarification transparente.
-                </p>
-            </div>
-
-            <div class="calculator-container">
-                <div class="calculator-grid">
-                    <div class="calculator-input">
-                        <label class="en">Select Material</label>
-                        <label class="ta" style="display:none">பொருளை தேர்ந்தெடுக்கவும்</label>
-                        <label class="fr" style="display:none">Sélectionnez le Matériau</label>
-                        <select id="materialSelect">
-                            <option value="900">M-Sand (₹900/ton)</option>
-                            <option value="750">S-Sand (₹750/ton)</option>
-                            <option value="8">Clay Bricks (₹8/piece)</option>
-                            <option value="700">Small Stones 20mm (₹700/ton)</option>
-                            <option value="650">Big Stones 40mm (₹650/ton)</option>
-                            <option value="35">Hollow Blocks (₹35/piece)</option>
-                        </select>
-                    </div>
-
-                    <div class="calculator-input">
-                        <label class="en">Quantity</label>
-                        <label class="ta" style="display:none">அளவு</label>
-                        <label class="fr" style="display:none">Quantité</label>
-                        <input type="number" id="quantity" min="1" value="10" step="1">
-                        <div class="unit-display">
-                            <span id="unitDisplay" class="en">tons</span>
-                            <span id="unitDisplay" class="ta" style="display:none">டன்</span>
-                            <span id="unitDisplay" class="fr" style="display:none">tonnes</span>
-                        </div>
-                    </div>
-
-                    <div class="calculator-input">
-                        <label class="en">Delivery Area</label>
-                        <label class="ta" style="display:none">விநியோக பகுதி</label>
-                        <label class="fr" style="display:none">Zone de Livraison</label>
-                        <select id="deliveryArea">
-                            <option value="0">Karaikal City (FREE)</option>
-                            <option value="0">Nallambal & Surrounding (FREE)</option>
-                            <option value="500">Kumbakonam (₹500)</option>
-                            <option value="800">Puducherry City (₹800)</option>
-                            <option value="600">Nagore & Thirunallar (₹600)</option>
-                        </select>
-                    </div>
-
-                    <div class="calculator-input">
-                        <label class="en">Payment Method</label>
-                        <label class="ta" style="display:none">கட்டண முறை</label>
-                        <label class="fr" style="display:none">Méthode de Paiement</label>
-                        <select id="paymentMethod">
-                            <option value="0">Cash (No Extra Charge)</option>
-                            <option value="50">UPI (₹50 Processing Fee)</option>
-                            <option value="100">Card Payment (₹100 Processing Fee)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="calculator-results">
-                    <h3 class="en">Your Order Summary</h3>
-                    <h3 class="ta" style="display:none">உங்கள் ஆர்டர் சுருக்கம்</h3>
-                    <h3 class="fr" style="display:none">Récapitulatif de Votre Commande</h3>
-
-                    <div class="result-item">
-                        <span class="en">Material Cost:</span>
-                        <span class="ta" style="display:none">பொருள் செலவு:</span>
-                        <span class="fr" style="display:none">Coût du Matériau:</span>
-                        <span id="materialCost">₹9,000</span>
-                    </div>
-
-                    <div class="result-item">
-                        <span class="en">Delivery Charge:</span>
-                        <span class="ta" style="display:none">விநியோக கட்டணம்:</span>
-                        <span class="fr" style="display:none">Frais de Livraison:</span>
-                        <span id="deliveryCharge">₹0</span>
-                    </div>
-
-                    <div class="result-item">
-                        <span class="en">Processing Fee:</span>
-                        <span class="ta" style="display:none">செயலாக்க கட்டணம்:</span>
-                        <span class="fr" style="display:none">Frais de Traitement:</span>
-                        <span id="processingFee">₹0</span>
-                    </div>
-
-                    <div class="result-item">
-                        <span class="en">GST (5%):</span>
-                        <span class="ta" style="display:none">ஜிஎஸ்டி (5%):</span>
-                        <span class="fr" style="display:none">TVA (5%):</span>
-                        <span id="gstAmount">₹450</span>
-                    </div>
-
-                    <div class="total-cost" id="totalCost">₹9,450</div>
-
-                    <p class="en" style="opacity: 0.9; font-size: 0.9rem;">
-                        <i class="fas fa-info-circle"></i> Price includes GST. Bulk discounts available on 20+ tons.
-                    </p>
-                    <p class="ta" style="opacity: 0.9; font-size: 0.9rem; display:none;">
-                        <i class="fas fa-info-circle"></i> விலையில் ஜிஎஸ்டி சேர்க்கப்பட்டுள்ளது. 20+ டன்களுக்கு மொத்த
-                        தள்ளுபடி கிடைக்கும்.
-                    </p>
-                    <p class="fr" style="opacity: 0.9; font-size: 0.9rem; display:none;">
-                        <i class="fas fa-info-circle"></i> Prix TVA incluse. Remises en gros disponibles sur 20+ tonnes.
-                    </p>
-                </div>
-
-                <div class="calculator-note">
-                    <p class="en"><strong>💡 Tip:</strong> Order 10+ tons for FREE delivery anywhere! WhatsApp us for
-                        special bulk rates.</p>
-                    <p class="ta" style="display:none"><strong>💡 உதவிக்குறிப்பு:</strong> 10+ டன்கள் ஆர்டர் செய்தால்
-                        எங்கும் இலவச விநியோகம்! சிறப்பு மொத்த விலைகளுக்கு WhatsApp செய்யவும்.</p>
-                    <p class="fr" style="display:none"><strong>💡 Astuce:</strong> Commandez 10+ tonnes pour une
-                        livraison GRATUITE partout ! WhatsApp nous pour des tarifs de gros spéciaux.</p>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="https://wa.me/919965843455?text=Hello!%20I%20calculated%20my%20order%20cost%20and%20want%20to%20place%20an%20order"
-                        class="whatsapp-btn" target="_blank" style="font-size: 1.2rem; padding: 18px 40px;">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="en">Place Order on WhatsApp</span>
-                        <span class="ta" style="display:none">WhatsApp இல் ஆர்டர் செய்யுங்கள்</span>
-                        <span class="fr" style="display:none">Passer Commande sur WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Customer Feedback Section -->
-    <section class="feedback-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;" class="en">⭐⭐⭐⭐⭐ Customer Testimonials</h2>
-                <h2 style="color: white; display:none;" class="ta">⭐⭐⭐⭐⭐ வாடிக்கையாளர் பரிந்துரைகள்</h2>
-                <h2 style="color: white; display:none;" class="fr">⭐⭐⭐⭐⭐ Témoignages Clients</h2>
-                <p style="color: #ccc; font-size: 1.2rem; margin-top: 20px;" class="en">
-                    What our happy customers say about us
-                </p>
-                <p style="color: #ccc; font-size: 1.2rem; margin-top: 20px; display:none;" class="ta">
-                    எங்கள் மகிழ்ச்சியான வாடிக்கையாளர்கள் நம்மைப் பற்றி என்ன சொல்கிறார்கள்
-                </p>
-                <p style="color: #ccc; font-size: 1.2rem; margin-top: 20px; display:none;" class="fr">
-                    Ce que nos clients heureux disent de nous
-                </p>
-            </div>
-
-            <div class="feedback-track" id="feedbackTrack">
-                <!-- Feedback cards will be duplicated by JavaScript -->
-                <div class="feedback-card">
-                    <div class="feedback-header">
-                        <div class="customer-avatar">R</div>
-                        <div class="customer-info">
-                            <h4 class="en">Rajesh Kumar</h4>
-                            <h4 class="ta" style="display:none">ராஜேஷ் குமார்</h4>
-                            <h4 class="fr" style="display:none">Rajesh Kumar</h4>
-                            <p class="en">Building Contractor, Karaikal</p>
-                            <p class="ta" style="display:none">கட்டுமான ஒப்பந்ததாரர், காரைக்கால்</p>
-                            <p class="fr" style="display:none">Entrepreneur en Bâtiment, Karaikal</p>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="feedback-text en">
-                        "Using their M-Sand for 3 years now. Quality is consistent and delivery is always on time.
-                        Best construction material supplier in Karaikal!"
-                    </p>
-                    <p class="feedback-text ta" style="display:none">
-                        "அவர்களின் எம்-மணலை 3 ஆண்டுகளாக பயன்படுத்துகிறேன். தரம் சீரானது மற்றும் விநியோகம் எப்போதும்
-                        சரியான நேரத்தில்.
-                        காரைக்காலில் சிறந்த கட்டுமான பொருள் சப்ளையர்!"
-                    </p>
-                    <p class="feedback-text fr" style="display:none">
-                        "J'utilise leur sable M depuis 3 ans maintenant. La qualité est constante et la livraison est
-                        toujours à l'heure.
-                        Meilleur fournisseur de matériaux de construction à Karaikal!"
-                    </p>
-                    <div class="feedback-date">15 March 2024</div>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="feedback-header">
-                        <div class="customer-avatar">S</div>
-                        <div class="customer-info">
-                            <h4 class="en">Suresh Babu</h4>
-                            <h4 class="ta" style="display:none">சுரேஷ் பாபு</h4>
-                            <h4 class="fr" style="display:none">Suresh Babu</h4>
-                            <p class="en">Home Builder, Kumbakonam</p>
-                            <p class="ta" style="display:none">வீடு கட்டுபவர், கும்பகோணம்</p>
-                            <p class="fr" style="display:none">Constructeur de Maisons, Kumbakonam</p>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="feedback-text en">
-                        "Ordered hollow blocks for my house construction. They delivered within 3 hours to Kumbakonam.
-                        Blocks are strong and uniform. Highly recommended!"
-                    </p>
-                    <p class="feedback-text ta" style="display:none">
-                        "என் வீட்டுக் கட்டுமானத்திற்கு வெற்று தொகுதிகள் ஆர்டர் செய்தேன். கும்பகோணத்திற்கு 3 மணி
-                        நேரத்திற்குள் விநியோகித்தனர்.
-                        தொகுதிகள் வலிமையானவை மற்றும் சீரானவை. மிகவும் பரிந்துரைக்கப்படுகிறது!"
-                    </p>
-                    <p class="feedback-text fr" style="display:none">
-                        "Commandé des blocs creux pour la construction de ma maison. Livrés en 3 heures à Kumbakonam.
-                        Les blocs sont solides et uniformes. Très recommandé!"
-                    </p>
-                    <div class="feedback-date">28 February 2024</div>
-                </div>
-
-                <div class="feedback-card">
-                    <div class="feedback-header">
-                        <div class="customer-avatar">P</div>
-                        <div class="customer-info">
-                            <h4 class="en">Priya Murugan</h4>
-                            <h4 class="ta" style="display:none">பிரியா முருகன்</h4>
-                            <h4 class="fr" style="display:none">Priya Murugan</h4>
-                            <p class="en">Architect, Puducherry</p>
-                            <p class="ta" style="display:none">கட்டிடக் கலைஞர், புதுச்சேரி</p>
-                            <p class="fr" style="display:none">Architecte, Puducherry</p>
-                        </div>
-                    </div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="feedback-text en">
-                        "As an architect, I specify their materials for all my projects. The quality control is
-                        excellent
-                        and their technical support is very helpful."
-                    </p>
-                    <p class="feedback-text ta" style="display:none">
-                        "ஒரு கட்டிடக் கலைஞராக, எனது அனைத்து திட்டங்களுக்கும் அவர்களின் பொருட்களை குறிப்பிடுகிறேன். தரக்
-                        கட்டுப்பாடு சிறந்தது
-                        மற்றும் அவர்களின் தொழில்நுட்ப ஆதரவு மிகவும் உதவிகரமானது."
-                    </p>
-                    <p class="feedback-text fr" style="display:none">
-                        "En tant qu'architecte, je spécifie leurs matériaux pour tous mes projets. Le contrôle qualité
-                        est excellent
-                        et leur support technique est très utile."
-                    </p>
-                    <div class="feedback-date">10 February 2024</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Products Section -->
     <section class="products-section" id="products">
@@ -1853,10 +898,9 @@
                     <div class="card-badge en">Most Popular</div>
                     <div class="card-badge ta" style="display:none">மிகவும் பிரபலமான</div>
                     <div class="card-badge fr" style="display:none">Le Plus Populaire</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1601643157091-2d5d2dc71c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="M-Sand">
+                        <img src="https://images.unsplash.com/photo-1601643157091-2d5d2dc71c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="M-Sand">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -1866,19 +910,18 @@
                             <span class="fr" style="display:none">Sable M (Manufacturé)</span>
                         </h3>
                         <p class="product-desc en">
-                            Say goodbye to river sand issues! Our M-Sand gives 30% stronger concrete.
+                            Say goodbye to river sand issues! Our M-Sand gives 30% stronger concrete. 
                             <strong>Perfect for RCC work</strong> and plastering.
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            நதி மணல் பிரச்சனைகளுக்கு விடைபெறுங்கள்! எங்கள் எம்-மணல் 30% வலிமையான கான்கிரீட் தருகிறது.
+                            நதி மணல் பிரச்சனைகளுக்கு விடைபெறுங்கள்! எங்கள் எம்-மணல் 30% வலிமையான கான்கிரீட் தருகிறது. 
                             <strong>ஆர்சிசி வேலைகளுக்கு சரியானது</strong> மற்றும் பூச்சு வேலைகளுக்கு.
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            Dites adieu aux problèmes de sable de rivière! Notre Sable M donne un béton 30% plus
-                            résistant.
+                            Dites adieu aux problèmes de sable de rivière! Notre Sable M donne un béton 30% plus résistant. 
                             <strong>Parfait pour les travaux RCC</strong> et le plâtrage.
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -1905,11 +948,11 @@
                                 <span class="fr" style="display:none">Écologique</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹900</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20M-Sand"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20M-Sand" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -1924,10 +967,9 @@
                     <div class="card-badge en">Best for Plaster</div>
                     <div class="card-badge ta" style="display:none">பூச்சுக்கு சிறந்தது</div>
                     <div class="card-badge fr" style="display:none">Meilleur pour Plâtre</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1523364589582-df6e7e81e84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="S-Sand">
+                        <img src="https://images.unsplash.com/photo-1523364589582-df6e7e81e84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="S-Sand">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -1937,19 +979,18 @@
                             <span class="fr" style="display:none">Sable S (Poussière de Pierre)</span>
                         </h3>
                         <p class="product-desc en">
-                            Get that <strong>mirror-finish plastering!</strong> Our S-Sand ensures crack-free walls
+                            Get that <strong>mirror-finish plastering!</strong> Our S-Sand ensures crack-free walls 
                             with superior bonding.
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            <strong>கண்ணாடி முடிப்பு பூச்சு</strong> பெறுங்கள்! எங்கள் எஸ்-மணல் விரிசல் இல்லாத சுவர்களை
+                            <strong>கண்ணாடி முடிப்பு பூச்சு</strong> பெறுங்கள்! எங்கள் எஸ்-மணல் விரிசல் இல்லாத சுவர்களை 
                             உயர்தர பிணைப்புடன் உறுதி செய்கிறது.
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            Obtenez ce <strong>plâtrage fini miroir!</strong> Notre Sable S assure des murs sans
-                            fissures
+                            Obtenez ce <strong>plâtrage fini miroir!</strong> Notre Sable S assure des murs sans fissures 
                             avec une adhérence supérieure.
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -1976,11 +1017,11 @@
                                 <span class="fr" style="display:none">Qualité Uniforme</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹750</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20S-Sand"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20S-Sand" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -1995,10 +1036,9 @@
                     <div class="card-badge en">Traditional Choice</div>
                     <div class="card-badge ta" style="display:none">பாரம்பரிய தேர்வு</div>
                     <div class="card-badge fr" style="display:none">Choix Traditionnel</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Clay Bricks">
+                        <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clay Bricks">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -2008,19 +1048,18 @@
                             <span class="fr" style="display:none">Briques d'Argile</span>
                         </h3>
                         <p class="product-desc en">
-                            <strong>Time-tested quality!</strong> Our bricks have supported homes for generations.
+                            <strong>Time-tested quality!</strong> Our bricks have supported homes for generations. 
                             Perfect load-bearing capacity.
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            <strong>காலம் சோதித்த தரம்!</strong> எங்கள் செங்கற்கள் தலைமுறைகளாக வீடுகளை ஆதரித்துள்ளன.
+                            <strong>காலம் சோதித்த தரம்!</strong> எங்கள் செங்கற்கள் தலைமுறைகளாக வீடுகளை ஆதரித்துள்ளன. 
                             சரியான சுமை தாங்கும் திறன்.
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            <strong>Qualité éprouvée par le temps!</strong> Nos briques ont soutenu des maisons pendant
-                            des générations.
+                            <strong>Qualité éprouvée par le temps!</strong> Nos briques ont soutenu des maisons pendant des générations. 
                             Capacité portante parfaite.
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -2047,11 +1086,11 @@
                                 <span class="fr" style="display:none">Forme Uniforme</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹8</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Clay%20Bricks"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Clay%20Bricks" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -2066,10 +1105,9 @@
                     <div class="card-badge en">For Concrete Mix</div>
                     <div class="card-badge ta" style="display:none">கான்கிரீட் கலவைக்கு</div>
                     <div class="card-badge fr" style="display:none">Pour Mélange Béton</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Small Stones">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Small Stones">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -2079,20 +1117,18 @@
                             <span class="fr" style="display:none">Petites Pierres (20mm)</span>
                         </h3>
                         <p class="product-desc en">
-                            <strong>Clean & washed aggregates</strong> that give your concrete superior strength.
+                            <strong>Clean & washed aggregates</strong> that give your concrete superior strength. 
                             No impurities, just pure quality!
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            <strong>சுத்தமான & கழுவப்பட்ட சேர்மங்கள்</strong> உங்கள் கான்கிரீட்டிற்கு உயர்தர வலிமை
-                            தருகின்றன.
+                            <strong>சுத்தமான & கழுவப்பட்ட சேர்மங்கள்</strong> உங்கள் கான்கிரீட்டிற்கு உயர்தர வலிமை தருகின்றன. 
                             மாசுபாடுகள் இல்லை, தூய தரம் மட்டுமே!
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            <strong>Granulats propres et lavés</strong> qui donnent à votre béton une résistance
-                            supérieure.
+                            <strong>Granulats propres et lavés</strong> qui donnent à votre béton une résistance supérieure. 
                             Pas d'impuretés, juste de la qualité pure!
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -2119,11 +1155,11 @@
                                 <span class="fr" style="display:none">Forme Ronde</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹700</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Small%20Stones%20(20mm)"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Small%20Stones%20(20mm)" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -2138,10 +1174,9 @@
                     <div class="card-badge en">Foundation Grade</div>
                     <div class="card-badge ta" style="display:none">அடித்தள தரம்</div>
                     <div class="card-badge fr" style="display:none">Grade Fondation</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1556817605-e4c6f70c0c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Big Stones">
+                        <img src="https://images.unsplash.com/photo-1556817605-e4c6f70c0c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Big Stones">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -2151,20 +1186,18 @@
                             <span class="fr" style="display:none">Grosses Pierres (40mm)</span>
                         </h3>
                         <p class="product-desc en">
-                            <strong>Built to last centuries!</strong> Our 40mm stones provide unmatched stability
+                            <strong>Built to last centuries!</strong> Our 40mm stones provide unmatched stability 
                             for heavy construction and foundations.
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            <strong>நூற்றாண்டுகள் நீடிக்க கட்டப்பட்டது!</strong> எங்கள் 40mm கற்கள் கனரக
-                            கட்டுமானத்திற்கும்
+                            <strong>நூற்றாண்டுகள் நீடிக்க கட்டப்பட்டது!</strong> எங்கள் 40mm கற்கள் கனரக கட்டுமானத்திற்கும் 
                             அடித்தளங்களுக்கும் தனித்த நிலைப்புத்தன்மையை வழங்குகின்றன.
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            <strong>Construit pour durer des siècles!</strong> Nos pierres de 40mm offrent une stabilité
-                            incomparable
+                            <strong>Construit pour durer des siècles!</strong> Nos pierres de 40mm offrent une stabilité incomparable 
                             pour la construction lourde et les fondations.
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -2191,11 +1224,11 @@
                                 <span class="fr" style="display:none">Durable</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹650</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Big%20Stones%20(40mm)"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Big%20Stones%20(40mm)" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -2210,10 +1243,9 @@
                     <div class="card-badge en">Modern Solution</div>
                     <div class="card-badge ta" style="display:none">நவீன தீர்வு</div>
                     <div class="card-badge fr" style="display:none">Solution Moderne</div>
-
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1590691565924-90d0a14443a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Hollow Blocks">
+                        <img src="https://images.unsplash.com/photo-1590691565924-90d0a14443a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hollow Blocks">
                     </div>
                     <div class="card-content">
                         <h3 class="product-name">
@@ -2223,19 +1255,18 @@
                             <span class="fr" style="display:none">Blocs Creux</span>
                         </h3>
                         <p class="product-desc en">
-                            <strong>Lightweight yet strong!</strong> Save 25% on construction cost with better
+                            <strong>Lightweight yet strong!</strong> Save 25% on construction cost with better 
                             thermal and sound insulation.
                         </p>
                         <p class="product-desc ta" style="display:none">
-                            <strong>இலகுவான ஆனால் வலிமையான!</strong> சிறந்த வெப்ப மற்றும் ஒலி காப்புடன்
+                            <strong>இலகுவான ஆனால் வலிமையான!</strong> சிறந்த வெப்ப மற்றும் ஒலி காப்புடன் 
                             கட்டுமான செலவில் 25% சேமிக்கவும்.
                         </p>
                         <p class="product-desc fr" style="display:none">
-                            <strong>Léger mais solide!</strong> Économisez 25% sur le coût de construction avec une
-                            meilleure
+                            <strong>Léger mais solide!</strong> Économisez 25% sur le coût de construction avec une meilleure 
                             isolation thermique et acoustique.
                         </p>
-
+                        
                         <div class="features-grid">
                             <div class="feature">
                                 <i class="fas fa-check-circle"></i>
@@ -2262,11 +1293,11 @@
                                 <span class="fr" style="display:none">Ignifuge</span>
                             </div>
                         </div>
-
+                        
                         <div class="price-action">
                             <div class="price">₹35</div>
-                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Hollow%20Blocks"
-                                class="whatsapp-btn" target="_blank">
+                            <a href="https://wa.me/919965843455?text=Hello!%20I%20want%20to%20order%20Hollow%20Blocks" 
+                               class="whatsapp-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="en">Order Now</span>
                                 <span class="ta" style="display:none">ஆர்டர் செய்யுங்கள்</span>
@@ -2287,7 +1318,7 @@
                 <h2 style="color: white; display:none;" class="ta">🤝 எங்களை ஏன் தேர்வு செய்ய வேண்டும்?</h2>
                 <h2 style="color: white; display:none;" class="fr">🤝 Pourquoi Nous Choisir?</h2>
             </div>
-
+            
             <div class="human-grid">
                 <div class="human-card">
                     <div class="human-icon">
@@ -2297,12 +1328,10 @@
                     <h3 class="ta" style="display:none">30+ வருட நம்பிக்கை</h3>
                     <h3 class="fr" style="display:none">30+ Ans de Confiance</h3>
                     <p class="en">Three generations of trust! We've built relationships, not just buildings.</p>
-                    <p class="ta" style="display:none">மூன்று தலைமுறைகளின் நம்பிக்கை! நாங்கள் கட்டிடங்களை மட்டும் அல்ல,
-                        உறவுகளை கட்டியுள்ளோம்.</p>
-                    <p class="fr" style="display:none">Trois générations de confiance! Nous avons construit des
-                        relations, pas seulement des bâtiments.</p>
+                    <p class="ta" style="display:none">மூன்று தலைமுறைகளின் நம்பிக்கை! நாங்கள் கட்டிடங்களை மட்டும் அல்ல, உறவுகளை கட்டியுள்ளோம்.</p>
+                    <p class="fr" style="display:none">Trois générations de confiance! Nous avons construit des relations, pas seulement des bâtiments.</p>
                 </div>
-
+                
                 <div class="human-card">
                     <div class="human-icon">
                         <i class="fas fa-truck-fast"></i>
@@ -2311,12 +1340,10 @@
                     <h3 class="ta" style="display:none">சரியான நேர விநியோகம்</h3>
                     <h3 class="fr" style="display:none">Livraison à Temps</h3>
                     <p class="en">Your time is precious. We deliver within 4 hours in Karaikal area!</p>
-                    <p class="ta" style="display:none">உங்கள் நேரம் விலைமதிப்பற்றது. காரைக்கால் பகுதியில் 4 மணி
-                        நேரத்திற்குள் விநியோகிக்கிறோம்!</p>
-                    <p class="fr" style="display:none">Votre temps est précieux. Nous livrons dans les 4 heures dans la
-                        région de Karaikal!</p>
+                    <p class="ta" style="display:none">உங்கள் நேரம் விலைமதிப்பற்றது. காரைக்கால் பகுதியில் 4 மணி நேரத்திற்குள் விநியோகிக்கிறோம்!</p>
+                    <p class="fr" style="display:none">Votre temps est précieux. Nous livrons dans les 4 heures dans la région de Karaikal!</p>
                 </div>
-
+                
                 <div class="human-card">
                     <div class="human-icon">
                         <i class="fas fa-award"></i>
@@ -2325,10 +1352,8 @@
                     <h3 class="ta" style="display:none">தரம் உத்தரவாதம்</h3>
                     <h3 class="fr" style="display:none">Qualité Garantie</h3>
                     <p class="en">Every brick is tested. Every sand bag is checked. Your satisfaction, our priority!</p>
-                    <p class="ta" style="display:none">ஒவ்வொரு செங்கலும் சோதிக்கப்படுகிறது. ஒவ்வொரு மணல் பையும்
-                        சோதிக்கப்படுகிறது. உங்கள் திருப்தி, எங்கள் முன்னுரிமை!</p>
-                    <p class="fr" style="display:none">Chaque brique est testée. Chaque sac de sable est vérifié. Votre
-                        satisfaction, notre priorité!</p>
+                    <p class="ta" style="display:none">ஒவ்வொரு செங்கலும் சோதிக்கப்படுகிறது. ஒவ்வொரு மணல் பையும் சோதிக்கப்படுகிறது. உங்கள் திருப்தி, எங்கள் முன்னுரிமை!</p>
+                    <p class="fr" style="display:none">Chaque brique est testée. Chaque sac de sable est vérifié. Votre satisfaction, notre priorité!</p>
                 </div>
             </div>
         </div>
@@ -2339,7 +1364,7 @@
         <div class="container">
             <div class="info-cards">
                 <div class="info-card">
-                    <h3><i class="fas fa-truck"></i>
+                    <h3><i class="fas fa-truck"></i> 
                         <span class="en">Delivery Areas & Charges</span>
                         <span class="ta" style="display:none">விநியோக பகுதிகள் & கட்டணங்கள்</span>
                         <span class="fr" style="display:none">Zones & Frais de Livraison</span>
@@ -2350,20 +1375,16 @@
                             <span class="ta" style="display:none">காரைக்கால் நகரம்</span>
                             <span class="fr" style="display:none">Ville de Karaikal</span>
                             <span style="color: var(--success); font-weight: bold;" class="en">FREE</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;"
-                                class="ta">இலவசம்</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;"
-                                class="fr">GRATUIT</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">இலவசம்</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">GRATUIT</span>
                         </div>
                         <div class="delivery-item">
                             <span class="en">Nallambal & Surrounding</span>
                             <span class="ta" style="display:none">நல்லம்பல் & சுற்றுவட்டாரம்</span>
                             <span class="fr" style="display:none">Nallambal & Environs</span>
                             <span style="color: var(--success); font-weight: bold;" class="en">FREE</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;"
-                                class="ta">இலவசம்</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;"
-                                class="fr">GRATUIT</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">இலவசம்</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">GRATUIT</span>
                         </div>
                         <div class="delivery-item">
                             <span class="en">Kumbakonam (32 mins)</span>
@@ -2385,16 +1406,15 @@
                         </div>
                     </div>
                     <p style="margin-top: 20px; color: var(--primary); font-weight: bold;">
-                        <i class="fas fa-gift"></i>
+                        <i class="fas fa-gift"></i> 
                         <span class="en">Bulk orders (10+ tons) get FREE delivery anywhere!</span>
                         <span class="ta" style="display:none">மொத்த ஆர்டர்கள் (10+ டன்) எங்கும் இலவச விநியோகம்!</span>
-                        <span class="fr" style="display:none">Commandes en gros (10+ tonnes) = LIVRAISON GRATUITE
-                            partout!</span>
+                        <span class="fr" style="display:none">Commandes en gros (10+ tonnes) = LIVRAISON GRATUITE partout!</span>
                     </p>
                 </div>
 
                 <div class="info-card">
-                    <h3><i class="fas fa-clock"></i>
+                    <h3><i class="fas fa-clock"></i> 
                         <span class="en">Office Timing & Location</span>
                         <span class="ta" style="display:none">அலுவலக நேரம் & இடம்</span>
                         <span class="fr" style="display:none">Heures & Emplacement</span>
@@ -2417,10 +1437,8 @@
                             <span class="ta" style="display:none">விடுமுறை நாட்கள்</span>
                             <span class="fr" style="display:none">Jours Fériés</span>
                             <span style="color: var(--success); font-weight: bold;" class="en">OPEN All Days</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">அனைத்து
-                                நாட்களும் திறந்த</span>
-                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">OUVERT Tous
-                                les Jours</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="ta">அனைத்து நாட்களும் திறந்த</span>
+                            <span style="color: var(--success); font-weight: bold; display:none;" class="fr">OUVERT Tous les Jours</span>
                         </div>
                         <div class="timing-item">
                             <span class="en">From Kumbakonam</span>
@@ -2429,18 +1447,17 @@
                             <span style="color: var(--primary); font-weight: bold;">32 minutes</span>
                         </div>
                     </div>
-
-                    <div
-                        style="margin-top: 30px; padding: 20px; background: rgba(0, 78, 137, 0.05); border-radius: 10px;">
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 78, 137, 0.05); border-radius: 10px;">
                         <h4 style="color: var(--secondary); margin-bottom: 10px;">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt"></i> 
                             <span class="en">Our Location</span>
                             <span class="ta" style="display:none">எங்கள் இடம்</span>
                             <span class="fr" style="display:none">Notre Emplacement</span>
                         </h4>
                         <p style="color: #555;">
                             <strong>WPWQ+R88, Kumbakonam - Karaikal Rd,<br>
-                                Nallambal, Puducherry 609601</strong>
+                            Nallambal, Puducherry 609601</strong>
                         </p>
                     </div>
                 </div>
@@ -2450,8 +1467,8 @@
 
     <!-- WhatsApp Float -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/919965843455?text=Hello%20Karaikal%20HollowBlocks!%20I%20need%20help%20with%20construction%20materials"
-            class="whatsapp-btn-float" target="_blank">
+        <a href="https://wa.me/919965843455?text=Hello%20Karaikal%20HollowBlocks!%20I%20need%20help%20with%20construction%20materials" 
+           class="whatsapp-btn-float" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -2465,21 +1482,19 @@
                     <h3 class="ta" style="display:none">காரைக்கால் ஹோலோப்ளாக்ஸ்</h3>
                     <h3 class="fr" style="display:none">Karaikal HollowBlocks</h3>
                     <p class="en" style="color: #ccc; line-height: 1.8;">
-                        <strong>Building trust since 1990.</strong> We're not just suppliers, we're your construction
-                        partners.
+                        <strong>Building trust since 1990.</strong> We're not just suppliers, we're your construction partners. 
                         Your dream, our responsibility!
                     </p>
                     <p class="ta" style="color: #ccc; line-height: 1.8; display:none;">
-                        <strong>1990 முதல் நம்பிக்கையை கட்டியெழுப்புகிறோம்.</strong> நாங்கள் சப்ளையர்கள் மட்டுமல்ல,
+                        <strong>1990 முதல் நம்பிக்கையை கட்டியெழுப்புகிறோம்.</strong> நாங்கள் சப்ளையர்கள் மட்டுமல்ல, 
                         உங்கள் கட்டுமான கூட்டாளிகள். உங்கள் கனவு, எங்கள் பொறுப்பு!
                     </p>
                     <p class="fr" style="color: #ccc; line-height: 1.8; display:none;">
-                        <strong>Bâtir la confiance depuis 1990.</strong> Nous ne sommes pas seulement des fournisseurs,
-                        nous sommes vos partenaires de construction.
+                        <strong>Bâtir la confiance depuis 1990.</strong> Nous ne sommes pas seulement des fournisseurs, nous sommes vos partenaires de construction. 
                         Votre rêve, notre responsabilité!
                     </p>
                 </div>
-
+                
                 <div class="footer-column">
                     <h3 class="en">Contact Us</h3>
                     <h3 class="ta" style="display:none">எங்களை தொடர்பு கொள்ளுங்கள்</h3>
@@ -2488,66 +1503,52 @@
                         <li><a href="tel:09965843455"><i class="fas fa-phone"></i> 099658 43455</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> WPWQ+R88, Kumbakonam Rd</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> 6:00 AM - 9:00 PM</a></li>
-                        <li><a href="#"><i class="fab fa-whatsapp"></i> <span class="en">WhatsApp Chat</span><span
-                                    class="ta" style="display:none">WhatsApp அரட்டை</span><span class="fr"
-                                    style="display:none">Chat WhatsApp</span></a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> <span class="en">WhatsApp Chat</span><span class="ta" style="display:none">WhatsApp அரட்டை</span><span class="fr" style="display:none">Chat WhatsApp</span></a></li>
                     </ul>
                 </div>
-
+                
                 <div class="footer-column">
                     <h3 class="en">Quick Links</h3>
                     <h3 class="ta" style="display:none">விரைவு இணைப்புகள்</h3>
                     <h3 class="fr" style="display:none">Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Home</span><span
-                                    class="ta" style="display:none">முகப்பு</span><span class="fr"
-                                    style="display:none">Accueil</span></a></li>
-                        <li><a href="#products"><i class="fas fa-chevron-right"></i> <span
-                                    class="en">Products</span><span class="ta"
-                                    style="display:none">பொருட்கள்</span><span class="fr"
-                                    style="display:none">Produits</span></a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Delivery Info</span><span
-                                    class="ta" style="display:none">விநியோக தகவல்</span><span class="fr"
-                                    style="display:none">Info Livraison</span></a></li>
-                        <li><a href="tel:09965843455"><i class="fas fa-chevron-right"></i> <span class="en">Call
-                                    Now</span><span class="ta" style="display:none">அழைக்கவும்</span><span class="fr"
-                                    style="display:none">Appeler</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Home</span><span class="ta" style="display:none">முகப்பு</span><span class="fr" style="display:none">Accueil</span></a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> <span class="en">Products</span><span class="ta" style="display:none">பொருட்கள்</span><span class="fr" style="display:none">Produits</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span class="en">Delivery Info</span><span class="ta" style="display:none">விநியோக தகவல்</span><span class="fr" style="display:none">Info Livraison</span></a></li>
+                        <li><a href="tel:09965843455"><i class="fas fa-chevron-right"></i> <span class="en">Call Now</span><span class="ta" style="display:none">அழைக்கவும்</span><span class="fr" style="display:none">Appeler</span></a></li>
                     </ul>
                 </div>
             </div>
-
+            
             <div class="copyright">
-                <p>&copy; 2024 Karaikal HollowBlocks.
+                <p>&copy; 2024 Karaikal HollowBlocks. 
                     <span class="en">All Rights Reserved. | Building Dreams Since 1990</span>
-                    <span class="ta" style="display:none">அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. | 1990 முதல் கனவுகளை
-                        கட்டியெழுப்புதல்</span>
-                    <span class="fr" style="display:none">Tous droits réservés. | Construire des Rêves Depuis
-                        1990</span>
+                    <span class="ta" style="display:none">அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. | 1990 முதல் கனவுகளை கட்டியெழுப்புதல்</span>
+                    <span class="fr" style="display:none">Tous droits réservés. | Construire des Rêves Depuis 1990</span>
                 </p>
                 <p style="margin-top: 10px;">
-                    <i class="fas fa-map-pin"></i> WPWQ+R88, Kumbakonam - Karaikal Rd, Nallambal, Puducherry 609601 |
+                    <i class="fas fa-map-pin"></i> WPWQ+R88, Kumbakonam - Karaikal Rd, Nallambal, Puducherry 609601 | 
                     <i class="fas fa-phone"></i> 099658 43455
                 </p>
             </div>
         </div>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Language Switching
-        document.addEventListener('DOMContentLoaded', function () {
+        // FIXED Language Switching - Simple and Reliable
+        document.addEventListener('DOMContentLoaded', function() {
             const langButtons = document.querySelectorAll('.lang-btn');
-
+            
             langButtons.forEach(button => {
-                button.addEventListener('click', function () {
+                button.addEventListener('click', function() {
                     const lang = this.dataset.lang;
-
+                    
                     // Remove active class from all buttons
                     langButtons.forEach(btn => btn.classList.remove('active'));
                     // Add active class to clicked button
                     this.classList.add('active');
-
+                    
                     // Show/hide English content
                     document.querySelectorAll('.en').forEach(el => {
                         if (lang === 'en') {
@@ -2556,7 +1557,7 @@
                             el.style.display = 'none';
                         }
                     });
-
+                    
                     // Show/hide Tamil content
                     document.querySelectorAll('.ta').forEach(el => {
                         if (lang === 'ta') {
@@ -2565,7 +1566,7 @@
                             el.style.display = 'none';
                         }
                     });
-
+                    
                     // Show/hide French content
                     document.querySelectorAll('.fr').forEach(el => {
                         if (lang === 'fr') {
@@ -2574,7 +1575,7 @@
                             el.style.display = 'none';
                         }
                     });
-
+                    
                     // Update WhatsApp message based on language
                     let whatsappMsg = "";
                     if (lang === 'en') {
@@ -2584,7 +1585,7 @@
                     } else if (lang === 'fr') {
                         whatsappMsg = "Bonjour Karaikal HollowBlocks! J'ai besoin d'aide avec les matériaux de construction";
                     }
-
+                    
                     // Update all WhatsApp links
                     document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
                         const baseUrl = link.href.split('?')[0];
@@ -2592,9 +1593,9 @@
                     });
                 });
             });
-
-            // Initialize Gallery Swiper
-            const gallerySwiper = new Swiper('.gallery-carousel', {
+            
+            // Initialize Swiper
+            const swiper = new Swiper('.swiper', {
                 loop: true,
                 autoplay: {
                     delay: 5000,
@@ -2604,100 +1605,22 @@
                 fadeEffect: {
                     crossFade: true
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
             });
-
-            // BUSINESS CALCULATOR
-            const materialSelect = document.getElementById('materialSelect');
-            const quantityInput = document.getElementById('quantity');
-            const deliveryArea = document.getElementById('deliveryArea');
-            const paymentMethod = document.getElementById('paymentMethod');
-
-            // Unit display elements
-            const unitDisplays = document.querySelectorAll('#unitDisplay');
-
-            // Result elements
-            const materialCostEl = document.getElementById('materialCost');
-            const deliveryChargeEl = document.getElementById('deliveryCharge');
-            const processingFeeEl = document.getElementById('processingFee');
-            const gstAmountEl = document.getElementById('gstAmount');
-            const totalCostEl = document.getElementById('totalCost');
-
-            // Price data
-            const priceData = {
-                '900': { unit: 'ton', name: 'M-Sand' },
-                '750': { unit: 'ton', name: 'S-Sand' },
-                '8': { unit: 'piece', name: 'Clay Bricks' },
-                '700': { unit: 'ton', name: 'Small Stones' },
-                '650': { unit: 'ton', name: 'Big Stones' },
-                '35': { unit: 'piece', name: 'Hollow Blocks' }
-            };
-
-            function updateCalculator() {
-                const pricePerUnit = parseFloat(materialSelect.value);
-                const quantity = parseFloat(quantityInput.value);
-                const deliveryCharge = parseFloat(deliveryArea.value);
-                const processingFee = parseFloat(paymentMethod.value);
-
-                // Calculate costs
-                const materialCost = pricePerUnit * quantity;
-                const gstRate = 0.05; // 5% GST
-                const gstAmount = materialCost * gstRate;
-                const totalCost = materialCost + deliveryCharge + processingFee + gstAmount;
-
-                // Update display
-                materialCostEl.textContent = `₹${materialCost.toLocaleString()}`;
-                deliveryChargeEl.textContent = deliveryCharge === 0 ? 'FREE' : `₹${deliveryCharge.toLocaleString()}`;
-                processingFeeEl.textContent = processingFee === 0 ? 'FREE' : `₹${processingFee.toLocaleString()}`;
-                gstAmountEl.textContent = `₹${gstAmount.toLocaleString()}`;
-                totalCostEl.textContent = `₹${totalCost.toLocaleString()}`;
-
-                // Update unit display
-                const unit = priceData[pricePerUnit]?.unit || 'unit';
-                const unitTranslations = {
-                    'ton': { en: 'tons', ta: 'டன்', fr: 'tonnes' },
-                    'piece': { en: 'pieces', ta: 'துண்டுகள்', fr: 'pièces' }
-                };
-
-                unitDisplays.forEach(display => {
-                    const lang = display.classList.contains('en') ? 'en' :
-                        display.classList.contains('ta') ? 'ta' : 'fr';
-                    display.textContent = unitTranslations[unit]?.[lang] || unit;
-                });
-            }
-
-            // Event listeners for calculator
-            materialSelect.addEventListener('change', updateCalculator);
-            quantityInput.addEventListener('input', updateCalculator);
-            deliveryArea.addEventListener('change', updateCalculator);
-            paymentMethod.addEventListener('change', updateCalculator);
-
-            // Initial calculation
-            updateCalculator();
-
-            // FEEDBACK SCROLLING
-            const feedbackTrack = document.getElementById('feedbackTrack');
-            const feedbackCards = document.querySelectorAll('.feedback-card');
-
-            // Duplicate feedback cards for seamless scrolling
-            feedbackCards.forEach(card => {
-                const clone = card.cloneNode(true);
-                feedbackTrack.appendChild(clone);
-            });
-
+            
             // Animate on scroll
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -100px 0px'
             };
-
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -2706,15 +1629,15 @@
                     }
                 });
             }, observerOptions);
-
+            
             // Observe all product cards
             document.querySelectorAll('.product-card').forEach(card => {
                 observer.observe(card);
             });
-
+            
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
@@ -2727,26 +1650,16 @@
                     }
                 });
             });
-
+            
             // Parallax effect on header
-            window.addEventListener('scroll', function () {
+            window.addEventListener('scroll', function() {
                 const scrolled = window.pageYOffset;
                 const header = document.querySelector('header');
                 if (header) {
                     header.style.backgroundPositionY = scrolled * 0.5 + 'px';
                 }
             });
-
-            // Add hover pause to feedback scrolling
-            feedbackTrack.addEventListener('mouseenter', () => {
-                feedbackTrack.style.animationPlayState = 'paused';
-            });
-
-            feedbackTrack.addEventListener('mouseleave', () => {
-                feedbackTrack.style.animationPlayState = 'running';
-            });
         });
     </script>
 </body>
-
 </html>
